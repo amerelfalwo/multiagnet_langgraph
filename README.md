@@ -10,7 +10,8 @@ pip3 install -r requirements.txt
 
 Create `.env` file and fill your api keys:
 ```
-OPENAI_API_KEY=your_openai_key_here
+GROQ_API_KEY=your_groq_key_here
+GROQ_MODEL=openai/gpt-oss-20b
 LANGSMITH_API_KEY=your_langsmith_key_here
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_PROJECT=langgraph-youtube-demo

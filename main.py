@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # loads .env into os.environ
 
-assert os.getenv("OPENAI_API_KEY"), "Missing OPENAI_API_KEY in .env"
+assert os.getenv("GROQ_API_KEY"), "Missing GROQ_API_KEY in .env"
 # LangSmith is optional, but recommended
 # assert os.getenv("LANGSMITH_API_KEY"), "Missing LANGSMITH_API_KEY in .env"
 

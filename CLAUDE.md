@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a LangGraph demonstration project comparing single-agent and multi-agent workflows using LangChain and OpenAI. The project showcases how to build a complex multi-agent system with specialized agents (Planner, Researcher, Writer, Critic, Finalizer) that collaborate through a state graph to produce well-reasoned recommendations.
+This is a LangGraph demonstration project comparing single-agent and multi-agent workflows using LangChain and Groq. The project showcases how to build a complex multi-agent system with specialized agents (Planner, Researcher, Writer, Critic, Finalizer) that collaborate through a state graph to produce well-reasoned recommendations.
 
 ## Environment Setup
 
@@ -18,7 +18,8 @@ pip3 install -r requirements.txt
 ```
 
 Required environment variables in `.env`:
-- `OPENAI_API_KEY` (required)
+- `GROQ_API_KEY` (required)
+- `GROQ_MODEL` (optional, default: `openai/gpt-oss-20b`)
 - `LANGSMITH_API_KEY` (optional but recommended for tracing)
 - `LANGCHAIN_TRACING_V2=true`
 - `LANGCHAIN_PROJECT=langgraph-youtube-demo`
@@ -71,11 +72,11 @@ The project uses Pydantic models for structured LLM outputs:
 ## Key Dependencies
 
 - `langchain==1.2.6`: Core framework
-- `langchain-openai==1.1.7`: OpenAI integration
+- `langchain-groq==1.1.3`: Groq integration
 - `langgraph==1.0.6`: State graph workflow orchestration
 - `langsmith==0.6.4`: Tracing and observability
 - `pydantic==2.12.5`: Structured outputs and validation
 
 ## Model Configuration
 
-All agents use `gpt-4o-mini` with temperature 0.2 (configured in agents/single_agent.py:10 and agents/multi_agent_graph.py:31).
+All agents use `openai/gpt-oss-20b` (or specified via `GROQ_MODEL`) with temperature 0.2 (configured in agents/single_agent.py and agents/multi_agent_graph.py).

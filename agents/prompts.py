@@ -21,7 +21,7 @@ Review the draft for:
 - weak reasoning
 - overconfidence
 - risky claims
-Return JSON matching the schema.
+Provide score (0-100), issues, missing_points, hallucination_risk, and fix_instructions.
 """
 
 FINALIZER_SYSTEM = """You are the Finalizer agent.
